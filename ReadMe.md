@@ -4,6 +4,21 @@ Taken from here: https://ant.design/components/table#components-table-demo-ajax
 
 To demonstrate TypeScript Warning in VS Code:
 
+In VS Code
+
+```tsx
+<Table
+      columns={columns}
+      rowKey={(record) => record.login.uuid}
+      dataSource={data}
+      pagination={tableParams.pagination}
+      loading={loading}
+      onChange={handleTableChange}
+    />
+```
+
+`onChange` function gives following warning:
+
 ```
 Type '(pagination: TablePaginationConfig, filters: Record<string, FilterValue>, sorter: SorterResult<DataType>) => void' is not assignable to type '(pagination: TablePaginationConfig, filters: Record<string, FilterValue | null>, sorter: SorterResult<DataType> | SorterResult<...>[], extra: TableCurrentDataSource<...>) => void'.
   Types of parameters 'filters' and 'filters' are incompatible.
