@@ -4,6 +4,7 @@ import { Table } from 'antd';
 import type { ColumnsType, TablePaginationConfig } from 'antd/es/table';
 import type { FilterValue, SorterResult } from 'antd/es/table/interface';
 import qs from 'qs';
+import type { TableProps } from "antd/es/table";
 
 interface DataType {
   name: {
@@ -21,7 +22,7 @@ interface TableParams {
   pagination?: TablePaginationConfig;
   sortField?: string;
   sortOrder?: string;
-  filters?: Record<string, FilterValue>;
+  filters?: Record<string, FilterValue | null>;
 }
 
 const columns: ColumnsType<DataType> = [
@@ -86,10 +87,10 @@ const App: React.FC = () => {
     fetchData();
   }, [JSON.stringify(tableParams)]);
 
-  const handleTableChange = (
-    pagination: TablePaginationConfig,
-    filters: Record<string, FilterValue>,
-    sorter: SorterResult<DataType>,
+  const handleTableChange: TableProps<DataType>["onChange"] = (
+    pagination,
+    filters,
+    sorter
   ) => {
     setTableParams({
       pagination,
