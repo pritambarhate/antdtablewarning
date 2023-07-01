@@ -1,5 +1,9 @@
 # Antd Table Ajax Example
 
+This repo was created for this stackoverflow question: https://stackoverflow.com/questions/76591547/how-can-i-resolve-typescript-warning-for-antd-tables-onchange-handler-in-the-of/76592192#76592192
+
+The solution to this is on the "solution" branch: https://github.com/pritambarhate/antdtablewarning/tree/solution
+
 Taken from here: https://ant.design/components/table#components-table-demo-ajax
 
 To demonstrate TypeScript Warning in VS Code:
